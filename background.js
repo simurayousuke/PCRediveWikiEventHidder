@@ -5,13 +5,6 @@ chrome.runtime.onInstalled.addListener(function() {
 	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
 		chrome.declarativeContent.onPageChanged.addRules([{
 			conditions: [new chrome.declarativeContent.PageStateMatcher({
-				pageUrl: {hostEquals: 'developer.chrome.com'},
-				})
-			],
-            actions: [new chrome.declarativeContent.ShowPageAction()]
-		}]);
-		chrome.declarativeContent.onPageChanged.addRules([{
-			conditions: [new chrome.declarativeContent.PageStateMatcher({
 				pageUrl: {hostEquals: 'pcredivewiki.tw'},
 				})
 			],
@@ -25,11 +18,12 @@ chrome.webNavigation.onCompleted.addListener(function() {
 		chrome.tabs.executeScript(null, {
 			code: "var pcredivewikiEventHidder_hidden="+result.pcredivewikiEventHidder_hidden+";"
 		}, function() {
-			chrome.tabs.executeScript(null, {
+				chrome.tabs.executeScript(null, {
 				file: "injection.js"
 			}, function() {
 				console.log("PCRedive Wiki Event Hidder is working");
+				console.log("PCRedive Wiki Traditional2Simplified is working");
 			});
 		});
 	});	
-}, {url: [{urlMatches : "https://pcredivewiki.tw/"}]});
+}, {url: [{urlMatches : "https://pcredivewiki.tw/*"}]});
