@@ -9,7 +9,7 @@
 	"activeTab",
 	"webNavigation",
 	"tabs",
-	"https://pcredivewiki.tw/"
+	"https://pcredivewiki.tw/*"
   ],
 "background": {
       "scripts": ["background.js"],

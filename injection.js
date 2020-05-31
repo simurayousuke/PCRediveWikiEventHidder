@@ -1,3 +1,7 @@
+if(pcredivewikiEventHidder_t2s){
+	document.body.innerHTML=fry_simplized(document.body.innerHTML);
+	document.body.style.fontFamily="auto";
+}
 if(window.location.href=="https://pcredivewiki.tw/"){
 	var event=document.getElementsByClassName("event-box")[0];
 	var parent=event.parentNode;
@@ -36,5 +40,3 @@ function fry_simplized(cc){
     }
     return str;
 }
-document.body.innerHTML=fry_simplized(document.body.innerHTML);
-document.body.style.fontFamily="auto";
